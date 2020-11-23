@@ -1,5 +1,5 @@
 ---
-title: About Goldydocs
+title: About GrdsCloud
 linkTitle: About
 menu:
   main:
@@ -8,31 +8,101 @@ menu:
 ---
 
 
-{{< blocks/cover title="About Goldydocs" image_anchor="bottom" height="min" >}}
+<!-- td-box--{{ $col_id }} td-box--gradient td-box--height-{{ $height }} -->
+<section class="row td-box">
+    <div class="col-md-1 order-md-1 hidden-xs hidden-sm hidden-md"></div>
+    <div class="col-md-3 col-lg-1 order-xs-first order-sm-first order-md-last text-center ">
 
-<p class="lead mt-5">A sample site using the Docsy Hugo theme.
-</p>
+    </div>
+    <div class="col-md-7 col-lg-8 order-xs-2 order-sm-2 order-md-2">
+        <h1>mysql-operator</h1>
+        <p class="lead mt-2">MySQL Operator is a native Kubernetes MySQL database management controller.</p>
+        <div class="mx-auto mt-5">
+            <a class="btn btn-lg btn-primary mr-3 mb-4" href="{{< relref "docs" >}}">
+                Learn More <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+            </a>
+            <a class="btn btn-lg btn-secondary mr-3 mb-4" href="https://github.com/GrdsCloud">
+                View Repository <i class="fab fa-github ml-2 "></i>
+            </a>
+        </div>
+    </div>
+</section>
 
-{{< /blocks/cover >}}
+<section class="row td-box td-box--0">
+    <div class="col">
+        <div class="row">
+            <div class="col-md-1 hidden-xs hidden-sm"></div>
+            <div class="col-10">
+                <h2>MySQL Operator is a native Kubernetes MySQL management controller</h2>
+                <p>You can run MySQL "statelessly" in cloud native environment, MySQL is a typical stateful software app, it's not easy to build a scalable and high available MySQL cluster in kubernetes environment. now with Grds MySQL Operator,you can run MySQL "statelessly" in cloud native environment just like your stateless apps.</p>
+                <div>&nbsp;</div>
+                <h3>Key Feature</h3>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b>Quickly build</b> a containered MySQL Cluster or single instance,parameterizable cpu/memory/io configuration.</li>
+                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b>High-Availability</b> automated inspect database failure,align and repair asynced binlog,elect new master instance.</li>
+                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b>Disaster Recovery</b> backup task schedule，onekey media recover.</li>
+                    <li><span class="fa-li"><i class="fas fa-check"></i></span><b>SlowSQL Analyst</b> automated collect and analyze application SQL，supply optimization suggestions.</li>
+                </ul>
+                <div>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-{{% blocks/lead %}}
-Goldydocs is a sample site using the <a href="https://github.com/google/docsy">Docsy</a> Hugo theme that shows what it can do and provides you with a template site structure. It’s designed for you to clone and edit as much as you like. See the different sections of the documentation and site for more ideas.
-{{% /blocks/lead %}}
+<section class="row td-box td-box--1">
+    <div class="col">
+        <div class="row">
+            <div class="col-12 ">
+                <h3 class="d-flex justify-content-center">Features</h3>
+                <br>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="d-flex justify-content-center"><h4>Kubernetes native</h4></div>
+                <p>MySQL Operator is a native Kubernetes MySQL management controller. This means you can easy to build a scalable and high available MySQL cluster in kubernetes environment.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-
-{{< blocks/section >}}
-<div class="col-12">
-<h1 class="text-center">This is another section</h1>
-</div>
-
-{{< /blocks/section >}}
-
-
-
-{{< blocks/section >}}
-
-<div class="col-12">
-<h1 class="text-center">This is another section</h1>
-</div>
-
-{{< /blocks/section >}}
+<section class="row td-box td-box--2">
+    <div class="col">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-lg-3 text-center">
+                <div class="mb-4 h1 text-white">
+                    <i class="fab fa-slack"></i>
+                </div>
+                <h4 >Talk to us on Slack</h4>
+                <p>
+                    <a class="text-white" href="">
+                        <button type="button" class="btn btn-secondary" style="width:150px; margin-top: 12px;">Talk</button>
+                    </a>
+                </p>
+                <p>Interested in learning more, speaking to other contributors, or finding answers?</p>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3 text-center">
+                <div class="mb-4 h1">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h4>Contributions welcome</h4>
+                <p><a href="">
+                        <button type="button" class="btn btn-secondary" style="width:150px; margin-top: 12px;">Contribute</button>
+                    </a>
+                </p>
+                <p>Want to join the fun on Github? New users are always welcome!</p>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-3 text-center">
+                <div class="mb-4 h1">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h4>Follow us on Twitter</h4>
+                <p><a href="">
+                        <button type="button" class="btn btn-secondary" style="width:150px; margin-top: 12px;">Follow</button>
+                    </a>
+                </p>
+                <p>For features announcements, interesting mysql-operator news, and other great things.</p>
+            </div>
+        </div>
+    </div>
+</section>

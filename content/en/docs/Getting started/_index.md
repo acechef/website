@@ -6,30 +6,89 @@ description: >
   What does your user need to know to try your project?
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
-
-Information in this section helps your user try your project themselves.
-
-* What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.
-
-* Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.
-
-Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.
-
 ## Prerequisites
 
-Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?
+- MySQL operator requires Kubernetes v1.14.x or later or k3s.
+- For high availability MySQL,at least 3 nodes k3s/k8s cluster.
 
-## Installation
 
-Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?
+> You can choose [Kubernetes Manifests](#deploy-mysql-operator-from-kubernetes-manifests) or [Helm](#deploy-mysql-operator-with-helm) to install MySQL operator
 
-## Setup
+## Deploy MySQL operator from Kubernetes Manifests
 
-Is there any initial setup users need to do after installation to try your project?
 
-## Try it out!
+1. Create a controlNamespace called "grds".
 
-Can your users test their installation, for example by running a command or deploying a Hello World example?
+    ```bash
+    kubectl create ns grds
+    ```
+
+2. Create a ServiceAccount and install cluster roles.
+
+    ```bash
+    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/rbac.yaml
+    ```
+
+3. Apply the ClusterResources.
+
+    ```bash
+    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/mysql.grds.cloud_mysqlclusters.yaml
+    ```
+
+4. Deploy the MySQL operator.
+
+    ```bash
+   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/config.yaml
+   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/deployment.yaml
+    ```
+
+## Deploy MySQL operator with Helm
+
+<p align="center"><img src="helm2.svg" width="150"></p>
+<p align="center">
+
+> Note: For the Helm-based installation you need [Helm](https://helm.sh/docs/intro/install/#helm) v3.2.4 or later.
+
+1. Add operator chart repository.
+    - Helm v3
+    ```bash
+    helm repo add grdscloud-stable https://grdscloud.github.io/charts/
+    helm repo update
+    ```
+
+2. Install the MySQL Operator
+
+    ```bash
+    helm upgrade --install --wait --create-namespace --namespace grds mysql-operator grdscloud-stable/mysql-operator
+    ```
+
+> If you using k3s,sometimes helm will not access k3s cluster,please copy the k3s.yaml to .kube/config,refer to [k3s cluster access](https://rancher.com/docs/k3s/latest/en/cluster-access)
+
+```
+[root@10-10-120-194 ~]# helm list -A
+Error: Kubernetes cluster unreachable: Get "http://localhost:8080/version?timeout=32s": dial tcp [::1]:8080: connect: connection refused
+
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+```
+
+### Check the MySQL operator deployment
+
+To verify that the installation was successful, complete the following steps.
+
+1. Check the status of the pods. You should see a new mysql-operator pod
+
+    ```bash
+    $ kubectl get pods -n grds
+    NAME                                        READY   STATUS    RESTARTS   AGE
+    mysql-operator-76c44cdc5c-lw4z6             1/1     Running   0          53s
+    ```
+
+2. Check the CRDs. You should see the following MySQL cluster CRDs.
+mysql-cluster-crd.png
+
+    ```bash
+    $ kubectl get crd | grep grds
+    NAME                                    CREATED AT
+    mysqlclusters.mysql.grds.cloud          2020-10-28T09:53:01Z
+    ```
+
