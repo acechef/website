@@ -55,14 +55,14 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "Grdsdocs"
+description = "GrdsCloud docs site"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
 [languages.cn]
-title = "Goldydocs"
-description = "Docsy er operativsystem for skyen"
+title = "Grdsdocs"
+description = "GrdsCloud docs site"
 languageName ="简体中文"
 contentDir = "content/cn"
 
