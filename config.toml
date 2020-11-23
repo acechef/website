@@ -1,5 +1,6 @@
+# https://discourse.gohugo.io/t/solved-hugo-not-rendering-css-but-hugo-server-is/6464
 baseURL = "https://grdscloud.github.io/website/"
-title = "Grds"
+title = "Grdsdocs"
 
 enableRobotsTXT = true
 
@@ -55,7 +56,7 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Grdsdocs"
+title = "Grds"
 description = "GrdsCloud docs site"
 languageName ="English"
 # Weight used for sorting.
