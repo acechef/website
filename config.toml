@@ -56,7 +56,7 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Grds"
+title = "Grdsdocs"
 description = "GrdsCloud docs site"
 languageName ="English"
 # Weight used for sorting.
