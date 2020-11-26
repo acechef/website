@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grdsdocs – Documentation</title><link>https://grdscloud.github.io/website/docs/</link><description>Recent content in Documentation on Grdsdocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://grdscloud.github.io/website/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: grds mysql add</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grdsdocs – Documentation</title><link>https://grdscloud.github.io/website/docs/</link><description>Recent content in Documentation on Grdsdocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://grdscloud.github.io/website/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Grds MySQL Add</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</guid><description>
 &lt;h4 id="create-cluster">Create Cluster&lt;/h4>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql add &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
@@ -59,7 +59,117 @@
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --cpu&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>0.5 --cpu-limit&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --memory&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2Gi --memory-limit&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>2Gi &lt;span style="color:#4e9a06">\
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span> --pvc-size&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>10Gi --replica-count&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> --slave-count&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> -n grds
 MySQL cluster created, name: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>my-cluster-test&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> namespace &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>grds&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>.
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: grds mysql delete</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/delete/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Grds MySQL List</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</guid><description>
+&lt;h4 id="list-cluster">List Cluster&lt;/h4>
+&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql list &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>options&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Flag&lt;/strong>:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CLI FLAG&lt;/th>
+&lt;th>DESCRIPTION&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&amp;ndash;all&lt;/td>
+&lt;td>shows all mysql clusters&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;selector&lt;/td>
+&lt;td>selector of the mysql cluster to list&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>List all mysql cluster under grds namespace&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql-cluster list --all -n grds -w table
++-----------------+-----------+---------+-------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Grds MySQL Update</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</guid><description>
+&lt;h4 id="update-cluster">Update Cluster&lt;/h4>
+&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql update &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Flag&lt;/strong>:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>CLI FLAG&lt;/th>
+&lt;th align="left">DESCRIPTION&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&amp;ndash;cpu&lt;/td>
+&lt;td align="left">Set the number of millicores to request for the CPU, e.g. &amp;ldquo;100m&amp;rdquo; or &amp;ldquo;0.1&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;cpu-limit&lt;/td>
+&lt;td align="left">Set the number of millicores to limit for the CPU, e.g. &amp;ldquo;100m&amp;rdquo; or &amp;ldquo;0.1&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;memory&lt;/td>
+&lt;td align="left">Set the amount of RAM to request, e.g. 1GiB. Overrides the default server value&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;memory-limit&lt;/td>
+&lt;td align="left">Set the amount of RAM to limit, e.g. 1GiB.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;mode&lt;/td>
+&lt;td align="left">The mode of cluster, e.g. HACluster/Singleton&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;pvc-size&lt;/td>
+&lt;td align="left">The size of the PVC capacity for Database instances. Must follow the standard Kubernetes format, e.g. &amp;ldquo;10.1Gi&amp;rdquo;&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;replica-count&lt;/td>
+&lt;td align="left">The number of primary candidate to create as part of the cluster.&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&amp;ndash;slave-count&lt;/td>
+&lt;td align="left">The number of slave to create as part of the cluster&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;p>Add a slave to mysql-cluster-test cluster under grds namespace&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql-cluster update my-cluster-test --slave-count&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
+MySQL cluster updated, name: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>my-cluster-test&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> namespace &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>grds&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>.
+$
+$ grds mysql-cluster list -n grds -w table
++-----------------+-----------+---------+-------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+
+$
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Grds MySQL Show</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</guid><description>
+&lt;h3 id="show-cluster">Show Cluster&lt;/h3>
+&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql show &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql show my-cluster-test -w table
+MYSQL CLUSTER INFO:
++-----------------+-----------+---------+-------+-----------+-------+--------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span> STATUS &lt;span style="color:#000;font-weight:bold">|&lt;/span> PORT &lt;span style="color:#000;font-weight:bold">|&lt;/span> ROOTPASSWORD &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+-----------+-------+--------------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30442&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Qkrsb9ttee &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++-----------------+-----------+---------+-------+-----------+-------+--------------+
+MYSQL DATABASE INFO:
++----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> CPUREQUEST &lt;span style="color:#000;font-weight:bold">|&lt;/span> CPULIMIT &lt;span style="color:#000;font-weight:bold">|&lt;/span> MEMORYREQUEST &lt;span style="color:#000;font-weight:bold">|&lt;/span> MEMORYLIMIT &lt;span style="color:#000;font-weight:bold">|&lt;/span> PVCSIZE &lt;span style="color:#000;font-weight:bold">|&lt;/span> NODENAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> ROLE &lt;span style="color:#000;font-weight:bold">|&lt;/span> STATUS &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-replica0-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-133 &lt;span style="color:#000;font-weight:bold">|&lt;/span> master &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-replica1-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-174 &lt;span style="color:#000;font-weight:bold">|&lt;/span> standby &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
+&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-slave0-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-232 &lt;span style="color:#000;font-weight:bold">|&lt;/span> slave &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
++----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Grds MySQL Delete</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/delete/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/delete/</guid><description>
 &lt;h4 id="delete-cluster">Delete Cluster&lt;/h4>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql delete &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>options&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
@@ -159,38 +269,7 @@ mysql-cluster-crd.png&lt;/p>
 NAME CREATED AT
 mysqlclusters.mysql.grds.cloud 2020-10-28T09:53:01Z
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs: grds mysql list</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</guid><description>
-&lt;h4 id="list-cluster">List Cluster&lt;/h4>
-&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql list &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>options&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Flag&lt;/strong>:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>CLI FLAG&lt;/th>
-&lt;th>DESCRIPTION&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&amp;ndash;all&lt;/td>
-&lt;td>shows all mysql clusters&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;selector&lt;/td>
-&lt;td>selector of the mysql cluster to list&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
-&lt;p>List all mysql cluster under grds namespace&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql-cluster list --all -n grds -w table
-+-----------------+-----------+---------+-------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: OperatorHub.io</title><link>https://grdscloud.github.io/website/docs/installation/operator-hub/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/operator-hub/</guid><description>
+&lt;/ol></description></item><item><title>Docs: OperatorHub.io</title><link>https://grdscloud.github.io/website/docs/installation/operator-hub/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/operator-hub/</guid><description>
 &lt;p>If your Kubernetes cluster is already running the &lt;a href="https://olm.operatorframework.io/">Operator Lifecycle Manager&lt;/a>,
 the PostgreSQL Operator can be installed as part of &lt;a href="https://operatorhub.io/operator/mysql">Grds MySQL for Kubernetes&lt;/a>
 that is available in OperatorHub.io.&lt;/p>
@@ -219,83 +298,4 @@ mysql-cluster-crd.png&lt;/p>
 NAME CREATED AT
 mysqlclusters.mysql.grds.cloud 2020-10-28T09:53:01Z
 &lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs: grds mysql show</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</guid><description>
-&lt;h3 id="show-cluster">Show Cluster&lt;/h3>
-&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql show &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql show my-cluster-test -w table
-MYSQL CLUSTER INFO:
-+-----------------+-----------+---------+-------+-----------+-------+--------------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span> STATUS &lt;span style="color:#000;font-weight:bold">|&lt;/span> PORT &lt;span style="color:#000;font-weight:bold">|&lt;/span> ROOTPASSWORD &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+-----------+-------+--------------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">30442&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> Qkrsb9ttee &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+-----------+-------+--------------+
-MYSQL DATABASE INFO:
-+----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> CPUREQUEST &lt;span style="color:#000;font-weight:bold">|&lt;/span> CPULIMIT &lt;span style="color:#000;font-weight:bold">|&lt;/span> MEMORYREQUEST &lt;span style="color:#000;font-weight:bold">|&lt;/span> MEMORYLIMIT &lt;span style="color:#000;font-weight:bold">|&lt;/span> PVCSIZE &lt;span style="color:#000;font-weight:bold">|&lt;/span> NODENAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> ROLE &lt;span style="color:#000;font-weight:bold">|&lt;/span> STATUS &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-replica0-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-133 &lt;span style="color:#000;font-weight:bold">|&lt;/span> master &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-replica1-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-174 &lt;span style="color:#000;font-weight:bold">|&lt;/span> standby &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-slave0-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-232 &lt;span style="color:#000;font-weight:bold">|&lt;/span> slave &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install client</title><link>https://grdscloud.github.io/website/docs/installation/grds-client/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/grds-client/</guid><description/></item><item><title>Docs: grds mysql update</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</guid><description>
-&lt;h4 id="update-cluster">Update Cluster&lt;/h4>
-&lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql update &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;strong>Flag&lt;/strong>:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>CLI FLAG&lt;/th>
-&lt;th align="left">DESCRIPTION&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&amp;ndash;cpu&lt;/td>
-&lt;td align="left">Set the number of millicores to request for the CPU, e.g. &amp;ldquo;100m&amp;rdquo; or &amp;ldquo;0.1&amp;rdquo;&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;cpu-limit&lt;/td>
-&lt;td align="left">Set the number of millicores to limit for the CPU, e.g. &amp;ldquo;100m&amp;rdquo; or &amp;ldquo;0.1&amp;rdquo;&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;memory&lt;/td>
-&lt;td align="left">Set the amount of RAM to request, e.g. 1GiB. Overrides the default server value&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;memory-limit&lt;/td>
-&lt;td align="left">Set the amount of RAM to limit, e.g. 1GiB.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;mode&lt;/td>
-&lt;td align="left">The mode of cluster, e.g. HACluster/Singleton&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;pvc-size&lt;/td>
-&lt;td align="left">The size of the PVC capacity for Database instances. Must follow the standard Kubernetes format, e.g. &amp;ldquo;10.1Gi&amp;rdquo;&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;replica-count&lt;/td>
-&lt;td align="left">The number of primary candidate to create as part of the cluster.&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&amp;ndash;slave-count&lt;/td>
-&lt;td align="left">The number of slave to create as part of the cluster&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;p>&lt;strong>Example:&lt;/strong>&lt;/p>
-&lt;p>Add a slave to mysql-cluster-test cluster under grds namespace&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql-cluster update my-cluster-test --slave-count&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">2&lt;/span>
-MySQL cluster updated, name: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>my-cluster-test&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> namespace &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>grds&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>.
-$
-$ grds mysql-cluster list -n grds -w table
-+-----------------+-----------+---------+-------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> NAME &lt;span style="color:#000;font-weight:bold">|&lt;/span> NAMESPACE &lt;span style="color:#000;font-weight:bold">|&lt;/span> REPLICA &lt;span style="color:#000;font-weight:bold">|&lt;/span> SLAVE &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+
-&lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
-+-----------------+-----------+---------+-------+
-$
-&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/ol></description></item><item><title>Docs: Install client</title><link>https://grdscloud.github.io/website/docs/installation/grds-client/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/grds-client/</guid><description/></item></channel></rss>

@@ -1,7 +1,7 @@
 ---
-title: "grds mysql add"
-linkTitle: "grds mysql add"
-weight: 5
+title: "Grds MySQL Add"
+linkTitle: "Grds MySQL Add"
+weight: 2
 description: >
    Create mysql cluster.
 ---

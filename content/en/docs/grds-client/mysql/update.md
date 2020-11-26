@@ -1,7 +1,7 @@
 ---
-title: "grds mysql update"
-linkTitle: "grds mysql add"
-weight: 50
+title: "Grds MySQL Update"
+linkTitle: "Grds MySQL Update"
+weight: 3
 description: >
    Update mysql update.
 ---

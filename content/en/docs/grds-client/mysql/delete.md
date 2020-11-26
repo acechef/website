@@ -1,6 +1,6 @@
 ---
-title: "grds mysql delete"
-linkTitle: "grds mysql delete"
+title: "Grds MySQL Delete"
+linkTitle: "Grds MySQL Delete"
 weight: 5
 description: >
    Delete mysql cluster.

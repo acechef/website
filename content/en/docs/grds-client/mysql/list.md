@@ -1,7 +1,7 @@
 ---
-title: "grds mysql list"
-linkTitle: "grds mysql list"
-weight: 30
+title: "Grds MySQL List"
+linkTitle: "Grds MySQL List"
+weight: 2
 description: >
    List mysql cluster.
 ---

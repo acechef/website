@@ -1,7 +1,7 @@
 ---
-title: "Using the grds Client"
-linkTitle: "Using the grds Client"
-weight: 4
+title: "Using The Grds Client"
+linkTitle: "Using The Grds Client"
+weight: 1
 description: >
   Here you can see the user manual for the grds client
 ---

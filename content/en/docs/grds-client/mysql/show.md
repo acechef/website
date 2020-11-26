@@ -1,7 +1,7 @@
 ---
-title: "grds mysql show"
-linkTitle: "grds mysql show"
-weight: 40
+title: "Grds MySQL Show"
+linkTitle: "Grds MySQL Show"
+weight: 4
 description: >
    Show mysql cluster detail.
 ---

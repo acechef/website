@@ -1,7 +1,6 @@
 ---
-title: "grds mysql"
-linkTitle: "grds mysql"
-weight: 4
+title: "Grds MySQL"
+linkTitle: "Grds MySQL"
 description: >
    The lifecycle of managed mysql clusters.
 ---

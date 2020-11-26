@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 linkTitle: "Installation"
-weight: 3
+weight: 2
 date: 2020-11-25
 description: >
   Install mysql operator
