@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grdsdocs – Documentation</title><link>https://grdscloud.github.io/website/docs/</link><description>Recent content in Documentation on Grdsdocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://grdscloud.github.io/website/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: grds mysql add</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Grdsdocs – grds mysql</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/</link><description>Recent content in grds mysql on Grdsdocs</description><generator>Hugo -- gohugo.io</generator><atom:link href="https://grdscloud.github.io/website/docs/grds-client/mysql/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: grds mysql add</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/add/</guid><description>
 &lt;h4 id="create-cluster">Create Cluster&lt;/h4>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql add &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
@@ -86,80 +86,7 @@ MySQL cluster created, name: &lt;span style="color:#ce5c00;font-weight:bold">[&l
 &lt;p>Delete my-cluster-test cluster under grds namespace&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">$ grds mysql-cluster delete my-cluster-test -n grds
 MySQL cluster deleted, name: &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>my-cluster-test&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> namespace &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>grds&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>.
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Prerequisites</title><link>https://grdscloud.github.io/website/docs/installation/prerequisites/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/prerequisites/</guid><description>
-&lt;p>The following is required prior to installing MySQL Operator.&lt;/p>
-&lt;h2 id="environment">Environment&lt;/h2>
-&lt;p>The MySQL Operator is tested in the following environments:&lt;/p>
-&lt;ul>
-&lt;li>Kubernetes v1.14.x or k3s&lt;/li>
-&lt;li>Amazon EKS&lt;/li>
-&lt;/ul>
-&lt;h2 id="client-interfaces">Client Interfaces&lt;/h2>
-&lt;p>The MySQL Operator installer will install the &lt;a href="https://grdscloud.github.io/website/website/docs/grds-client/">&lt;code>grds&lt;/code> client&lt;/a> interface
-to help with using the MySQL Operator. However, it is also recommend that
-you have access to &lt;a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">&lt;code>kubectl&lt;/code>&lt;/a> and are able to communicate with the
-Kubernetes cluster that you are working with.&lt;/p>
-&lt;h2 id="ports">Ports&lt;/h2>
-&lt;p>There are several application ports to note when using the MySQL Operator.
-These ports allow for the &lt;a href="https://grdscloud.github.io/website/website/docs/grds-client/">&lt;code>grds&lt;/code> client&lt;/a>
-to interface with the MySQL Operator API:&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Container&lt;/th>
-&lt;th>Port&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>API Server&lt;/td>
-&lt;td>8443&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Manifest</title><link>https://grdscloud.github.io/website/docs/installation/mysql-operator/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/mysql-operator/</guid><description/></item><item><title>Docs: Helm Chart</title><link>https://grdscloud.github.io/website/docs/installation/helm/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/helm/</guid><description>
-&lt;h2 id="deploy-mysql-operator-with-helm">Deploy MySQL operator with Helm&lt;/h2>
-&lt;p align="center">&lt;img src="helm2.svg" width="150">&lt;/p>
-&lt;p align="center">
-&lt;blockquote>
-&lt;p>Note: For the Helm-based installation you need &lt;a href="https://helm.sh/docs/intro/install/#helm">Helm&lt;/a> v3.2.4 or later.&lt;/p>
-&lt;/blockquote>
-&lt;ol>
-&lt;li>
-&lt;p>Add operator chart repository.&lt;/p>
-&lt;ul>
-&lt;li>Helm v3&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">helm repo add grdscloud-stable https://grdscloud.github.io/charts/
-helm repo update
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Install the MySQL Operator&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">helm upgrade --install --wait --create-namespace --namespace grds mysql-operator grdscloud-stable/mysql-operator
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol>
-&lt;blockquote>
-&lt;p>If you using k3s,sometimes helm will not access k3s cluster,please copy the k3s.yaml to .kube/config,refer to &lt;a href="https://rancher.com/docs/k3s/latest/en/cluster-access">k3s cluster access&lt;/a>&lt;/p>
-&lt;/blockquote>
-&lt;pre>&lt;code>$ helm list -A
-Error: Kubernetes cluster unreachable: Get &amp;quot;http://localhost:8080/version?timeout=32s&amp;quot;: dial tcp [::1]:8080: connect: connection refused
-cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
-&lt;/code>&lt;/pre>&lt;h3 id="check-the-mysql-operator-deployment">Check the MySQL operator deployment&lt;/h3>
-&lt;p>To verify that the installation was successful, complete the following steps.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Check the status of the pods. You should see a new mysql-operator pod&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ kubectl get pods -n grds
-NAME READY STATUS RESTARTS AGE
-mysql-operator-76c44cdc5c-lw4z6 1/1 Running &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 53s
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Check the CRDs. You should see the following MySQL cluster CRDs.
-mysql-cluster-crd.png&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ kubectl get crd &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep grds
-NAME CREATED AT
-mysqlclusters.mysql.grds.cloud 2020-10-28T09:53:01Z
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs: grds mysql list</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: grds mysql list</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/list/</guid><description>
 &lt;h4 id="list-cluster">List Cluster&lt;/h4>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql list &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>options&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
@@ -190,36 +117,7 @@ mysqlclusters.mysql.grds.cloud 2020-10-28T09:53:01Z
 +-----------------+-----------+---------+-------+
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +-----------------+-----------+---------+-------+
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: OperatorHub.io</title><link>https://grdscloud.github.io/website/docs/installation/operator-hub/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/operator-hub/</guid><description>
-&lt;p>If your Kubernetes cluster is already running the &lt;a href="https://olm.operatorframework.io/">Operator Lifecycle Manager&lt;/a>,
-the PostgreSQL Operator can be installed as part of &lt;a href="https://operatorhub.io/operator/mysql">Grds MySQL for Kubernetes&lt;/a>
-that is available in OperatorHub.io.&lt;/p>
-&lt;h2 id="before-you-begin">Before You Begin&lt;/h2>
-&lt;p>First, make sure OLM and the OperatorHub.io catalog are installed by running
-&lt;code>kubectl get CatalogSources --all-namespaces&lt;/code>. You should see something similar to the following:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">NAMESPACE NAME DISPLAY TYPE PUBLISHER
-olm operatorhubio-catalog Community Operators grpc OperatorHub.io
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="subscription-mysql-operator">Subscription MySQL Operator&lt;/h2>
-&lt;p>Install the operator by running the following command&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">kubectl create -f https://operatorhub.io/install/mysql.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>This Operator will be installed in the &amp;ldquo;operators&amp;rdquo; namespace and will be usable from all namespaces in the cluster.&lt;/p>
-&lt;h2 id="check-the-mysql-operator-deployment">Check the MySQL operator deployment&lt;/h2>
-&lt;p>To verify that the installation was successful, complete the following steps.&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Check the status of the pods. You should see a new mysql-operator pod&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ kubectl get pods -n operator
-NAME READY STATUS RESTARTS AGE
-mysql-operator-76c44cdc5c-lw4z6 1/1 Running &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> 53s
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>Check the CRDs. You should see the following MySQL cluster CRDs.
-mysql-cluster-crd.png&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">$ kubectl get crd &lt;span style="color:#000;font-weight:bold">|&lt;/span> grep operator
-NAME CREATED AT
-mysqlclusters.mysql.grds.cloud 2020-10-28T09:53:01Z
-&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ol></description></item><item><title>Docs: grds mysql show</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: grds mysql show</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/show/</guid><description>
 &lt;h3 id="show-cluster">Show Cluster&lt;/h3>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql show &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
@@ -239,7 +137,7 @@ MYSQL DATABASE INFO:
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-replica1-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-174 &lt;span style="color:#000;font-weight:bold">|&lt;/span> standby &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 &lt;span style="color:#000;font-weight:bold">|&lt;/span> my-cluster-test-slave0-0 &lt;span style="color:#000;font-weight:bold">|&lt;/span> grds &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> 2Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10Gi &lt;span style="color:#000;font-weight:bold">|&lt;/span> 10-10-120-232 &lt;span style="color:#000;font-weight:bold">|&lt;/span> slave &lt;span style="color:#000;font-weight:bold">|&lt;/span> available &lt;span style="color:#000;font-weight:bold">|&lt;/span>
 +----------------------------+-----------+------------+----------+---------------+-------------+---------+---------------+---------+-----------+
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install client</title><link>https://grdscloud.github.io/website/docs/installation/grds-client/</link><pubDate>Wed, 25 Nov 2020 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/installation/grds-client/</guid><description/></item><item><title>Docs: grds mysql update</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: grds mysql update</title><link>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://grdscloud.github.io/website/docs/grds-client/mysql/update/</guid><description>
 &lt;h4 id="update-cluster">Update Cluster&lt;/h4>
 &lt;p>&lt;strong>Usage&lt;/strong>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">grds mysql update &amp;lt;clusterName&amp;gt; &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>flags&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
