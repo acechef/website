@@ -26,20 +26,19 @@ description: >
 2. Create a ServiceAccount and install cluster roles.
 
     ```bash
-    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/rbac.yaml
+    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/website/master/manifests/rbac.yaml
     ```
 
 3. Apply the ClusterResources.
 
     ```bash
-    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/mysql.grds.cloud_mysqlclusters.yaml
+    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/website/master/manifests/mysql.grds.cloud_mysqlclusters.yaml
     ```
 
 4. Deploy the MySQL operator.
 
     ```bash
-   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/config.yaml
-   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/deployment.yaml
+   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/website/master/manifests/deployment.yaml
     ```
 
 ## Deploy MySQL operator with Helm
