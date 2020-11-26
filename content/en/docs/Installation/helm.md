@@ -1,46 +1,12 @@
 ---
-title: "Getting Started"
-linkTitle: "Getting Started"
-weight: 2
+title: "Helm Chart"
+linkTitle: "Helm Chart"
+weight: 30
+date: 2020-11-25
 description: >
-  What does your user need to know to try your project?
+  Install mysql operator by helm
 ---
 
-## Prerequisites
-
-- MySQL operator requires Kubernetes v1.14.x or later or k3s.
-- For high availability MySQL,at least 3 nodes k3s/k8s cluster.
-
-
-> You can choose [Kubernetes Manifests](#deploy-mysql-operator-from-kubernetes-manifests) or [Helm](#deploy-mysql-operator-with-helm) to install MySQL operator
-
-## Deploy MySQL operator from Kubernetes Manifests
-
-
-1. Create a controlNamespace called "grds".
-
-    ```bash
-    kubectl create ns grds
-    ```
-
-2. Create a ServiceAccount and install cluster roles.
-
-    ```bash
-    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/rbac.yaml
-    ```
-
-3. Apply the ClusterResources.
-
-    ```bash
-    kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/mysql.grds.cloud_mysqlclusters.yaml
-    ```
-
-4. Deploy the MySQL operator.
-
-    ```bash
-   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/config.yaml
-   kubectl -n grds create -f https://raw.githubusercontent.com/GrdsCloud/mysql-operator-docs/master/manifests/deployment.yaml
-    ```
 
 ## Deploy MySQL operator with Helm
 
@@ -65,7 +31,7 @@ description: >
 > If you using k3s,sometimes helm will not access k3s cluster,please copy the k3s.yaml to .kube/config,refer to [k3s cluster access](https://rancher.com/docs/k3s/latest/en/cluster-access)
 
 ```
-[root@10-10-120-194 ~]# helm list -A
+$ helm list -A
 Error: Kubernetes cluster unreachable: Get "http://localhost:8080/version?timeout=32s": dial tcp [::1]:8080: connect: connection refused
 
 cp /etc/rancher/k3s/k3s.yaml ~/.kube/config

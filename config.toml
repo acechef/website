@@ -100,6 +100,8 @@ archived_version = false
 # current doc set.
 version = "0.0"
 
+operatorVersion = "v1.0.0"
+
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
 url_latest_version = "https://grdscloud.github.io/website/"
